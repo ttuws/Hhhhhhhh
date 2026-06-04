@@ -1632,7 +1632,7 @@ Components.Element = (function()
 			FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json"),
 			Text = Desc,
 			TextColor3 = Color3.fromRGB(200, 200, 200),
-			TextSize = 12,
+			TextSize = 14,
 			TextWrapped = true,
 			TextXAlignment = Enum.TextXAlignment.Left,
 			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
@@ -3375,7 +3375,7 @@ Components.TitleBar = (function()
 						Enum.FontWeight.Regular,
 						Enum.FontStyle.Normal
 					),
-					TextSize = 13,
+					TextSize = 14,
 					TextXAlignment = "Left",
 					TextYAlignment = "Center",
 					Size = UDim2.fromScale(0, 1),
