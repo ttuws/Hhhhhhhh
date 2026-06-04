@@ -3354,11 +3354,11 @@ Components.TitleBar = (function()
 					RichText = true,
 					Text = Config.Title,
 					FontFace = Font.new(
-						"rbxasset://fonts/families/GothamSSm.json",
-						Enum.FontWeight.Regular,
-						Enum.FontStyle.Normal
-					),
-					TextSize = 13,
+    "rbxasset://fonts/families/GothamSSm.json",
+    Enum.FontWeight.Bold,
+    Enum.FontStyle.Normal
+),
+					TextSize = 14,
 					TextXAlignment = "Left",
 					TextYAlignment = "Center",
 					Size = UDim2.fromScale(0, 1),
@@ -3374,10 +3374,10 @@ Components.TitleBar = (function()
 					Text = Config.SubTitle,
 					TextTransparency = 0.4,
 					FontFace = Font.new(
-						"rbxasset://fonts/families/GothamSSm.json",
-						Enum.FontWeight.Regular,
-						Enum.FontStyle.Normal
-					),
+    "rbxasset://fonts/families/GothamSSm.json",
+    Enum.FontWeight.Medium,
+    Enum.FontStyle.Normal
+),
 					TextSize = 14,
 					TextXAlignment = "Left",
 					TextYAlignment = "Center",
