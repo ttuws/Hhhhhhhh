@@ -1582,19 +1582,16 @@ Components.Element = (function()
 		local Options = Options or {}
 
 		Element.TitleLabel = New("TextLabel", {
-			FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Medium, Enum.FontStyle.Normal),
-			Text = Title,
-			TextColor3 = Color3.fromRGB(240, 240, 240),
-			TextSize = 13,
-			TextXAlignment = Enum.TextXAlignment.Left,
-			Size = UDim2.new(1, 0, 0, 14),
-			BackgroundColor3 = Color3.fromRGB(255, 255, 255),
-			BackgroundTransparency = 1,
-			LayoutOrder = 2,
-			ThemeTag = {
-				TextColor3 = "Text",
-			},
-		})
+    FontFace = Font.new("rbxasset://fonts/families/GothamSSm.json", Enum.FontWeight.Bold, Enum.FontStyle.Normal),
+    Text = Title,
+    TextColor3 = Color3.fromRGB(255, 255, 255),
+    TextSize = 13,
+    TextXAlignment = Enum.TextXAlignment.Left,
+    Size = UDim2.new(1, 0, 0, 14),
+    BackgroundColor3 = Color3.fromRGB(255, 255, 255),
+    BackgroundTransparency = 1,
+    LayoutOrder = 2,
+})
 
 		Element.Header = New("Frame", {
 			AutomaticSize = Enum.AutomaticSize.Y,
@@ -3378,7 +3375,7 @@ Components.TitleBar = (function()
 						Enum.FontWeight.Regular,
 						Enum.FontStyle.Normal
 					),
-					TextSize = 12,
+					TextSize = 13,
 					TextXAlignment = "Left",
 					TextYAlignment = "Center",
 					Size = UDim2.fromScale(0, 1),
