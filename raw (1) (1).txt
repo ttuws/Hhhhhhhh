@@ -504,7 +504,7 @@ function Library:CreateWindow(Setting)
 	MainContainer.Size = UDim2.new(1, 0, 1, 0)
 
 	local uistr = Instance.new("UIStroke", MainContainer);
-	uistr.Thickness = 1;
+	uistr.Thickness = 0;
 	uistr.Color = Color3.fromRGB(90, 90, 70);
 
 	local uigradient = Instance.new("UIGradient", MainContainer);
@@ -596,7 +596,7 @@ function Library:CreateWindow(Setting)
 
 	local pageControlStroke = Instance.new("UIStroke", PageControl)
 	pageControlStroke.Color = Color3.fromRGB(90, 90, 70)
-	pageControlStroke.Thickness = 1
+	pageControlStroke.Thickness = 0
 
 	local pageControlGradient = Instance.new("UIGradient", PageControl)
 	pageControlGradient.Color = ColorSequence.new{
