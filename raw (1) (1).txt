@@ -504,6 +504,7 @@ function Library:CreateWindow(Setting)
 	MainContainer.Size = UDim2.new(1, 0, 1, 0)
 
 	local uistr = Instance.new("UIStroke", MainContainer);
+	uistr.Enabled = false;
 	uistr.Thickness = 0;
 	uistr.Color = Color3.fromRGB(90, 90, 70);
 
