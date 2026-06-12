@@ -548,7 +548,7 @@ function Library:CreateWindow(Setting)
 	local TopStroke = Instance.new("Frame", TopMain)
 	TopStroke.Name = "TopStroke"
 	TopStroke.BackgroundColor3 = Color3.fromRGB(90, 90, 70)
-	TopStroke.BackgroundTransparency = 0.6
+	TopStroke.BackgroundTransparency = 1
 	TopStroke.BorderSizePixel = 0
 	TopStroke.Position = UDim2.new(0, 0, 1, -1)
 	TopStroke.Size = UDim2.new(1, 0, 0, 1)
