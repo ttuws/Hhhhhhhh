@@ -1369,7 +1369,7 @@ function Library:CreateWindow(Setting)
 				check.Name = "check"
 				check.Parent = checkbox
 				check.AnchorPoint = Vector2.new(0.5, 0.5)
-				check.BackgroundColor3 = Color3.fromRGB(135, 206, 250)
+				check.BackgroundColor3 = Color3.fromRGB(255, 120, 80)
 				check.Position = UDim2.new(0.5, 0, 0.5, 0)
 				local cac = 5
 				if Desc then
