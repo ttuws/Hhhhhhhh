@@ -5,7 +5,6 @@ local Mouse = LocalPlayer:GetMouse()
 local CoreGui = game:GetService("CoreGui")
 local function MakeDraggable(topbarobject, object)
 	local function CustomPos(topbarobject, object)
-    	local Size = Config.Size
 		local Dragging = nil
 		local DragInput = nil
 		local DragStart = nil
@@ -407,7 +406,7 @@ function FlurioreLib:MakeGui(GuiConfig)
 	DropShadowHolder.BorderSizePixel = 0
 	DropShadowHolder.AnchorPoint = Vector2.new(0.5, 0.5)
 	DropShadowHolder.Position = UDim2.new(0.5, 0, 0.5, 0)
-	DropShadowHolder.Size = Size or UDim2.new(0, 455, 0, 350)
+	DropShadowHolder.Size = UDim2.new(0, 455, 0, 350)
 	DropShadowHolder.ZIndex = 0
 	DropShadowHolder.Name = "DropShadowHolder"
 	DropShadowHolder.Parent = HirimiGui
