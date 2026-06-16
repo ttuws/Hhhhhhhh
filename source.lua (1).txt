@@ -722,8 +722,8 @@ function FlurioreLib:MakeGui(GuiConfig)
 			HirimiGui:Destroy()
 		end
 	end
-	local OldPos = UDim2.new(0.5, 0, 0.5, 0)
-	local OldSize = UDim2.new(0, 550, 0, 400)
+	local OldPos = DropShadowHolder.Position
+	local OldSize = DropShadowHolder.Size
 	MaxRestore.MouseButton1Down:Connect(function()
 		CircleClick(MaxRestore, Mouse.X, Mouse.Y)
 		if ImageLabel.Image == "rbxassetid://9886659406" then
@@ -761,6 +761,79 @@ function FlurioreLib:MakeGui(GuiConfig)
 	end)
 	DropShadowHolder.Size = UDim2.new(0, 115 + TextLabel.TextBounds.X + 1 + TextLabel1.TextBounds.X, 0, 350)
 	MakeDraggable(Top, DropShadowHolder)
+	local noryxhub = Instance.new("ScreenGui")
+	local nory = Instance.new("Frame")
+	local UICornerBtn = Instance.new("UICorner")
+	local ImageLabelBtn = Instance.new("ImageLabel")
+	local TextButtonBtn = Instance.new("TextButton")
+
+	noryxhub.Name = "Ruian"  
+	noryxhub.Parent = CoreGui -- Gắn thẳng vào CoreGui của hệ thống
+	noryxhub.ZIndexBehavior = Enum.ZIndexBehavior.Sibling  
+	noryxhub.DisplayOrder = 10
+
+	nory.Name = "nory"  
+	nory.Parent = noryxhub  
+	nory.AnchorPoint = Vector2.new(0, 1) 
+	nory.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
+	nory.Position = UDim2.new(0, 15, 1, -15) -- Góc dưới bên trái màn hình
+	nory.Size = UDim2.new(0, 50, 0, 50)  
+	nory.Active = true
+	nory.Draggable = true
+
+	UICornerBtn.CornerRadius = UDim.new(1, 0)  
+	UICornerBtn.Parent = nory  
+
+	ImageLabelBtn.Parent = nory  
+	ImageLabelBtn.AnchorPoint = Vector2.new(0.5, 0.5)
+	ImageLabelBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+	ImageLabelBtn.BackgroundTransparency = 1
+	ImageLabelBtn.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	ImageLabelBtn.BorderSizePixel = 0
+	ImageLabelBtn.Position = UDim2.new(0.5, 0, 0.5, 0)
+	ImageLabelBtn.Size = UDim2.new(0, 40, 0, 40)
+	ImageLabelBtn.Image = "rbxassetid://112485471724320" -- Id ảnh của bạn
+
+	TextButtonBtn.Parent = nory  
+	TextButtonBtn.BackgroundColor3 = Color3.fromRGB(255, 255, 255)  
+	TextButtonBtn.BackgroundTransparency = 1  
+	TextButtonBtn.Size = UDim2.new(1, 0, 1, 0)  
+	TextButtonBtn.Font = Enum.Font.SourceSans  
+	TextButtonBtn.Text = ""  
+
+	local zoomedIn = false  
+	local originalSize = UDim2.new(0, 40, 0, 40)  
+	local zoomedSize = UDim2.new(0, 30, 0, 30)  
+	local tweenInfoBtn = TweenInfo.new(0.25, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)  
+
+	local faded = false  
+	local fadeInTween = TweenService:Create(nory, tweenInfoBtn, {BackgroundTransparency = 0.25})  
+	local fadeOutTween = TweenService:Create(nory, tweenInfoBtn, {BackgroundTransparency = 0})  
+
+	TextButtonBtn.MouseButton1Down:Connect(function()  
+		-- Hiệu ứng co giãn nút tròn khi bấm
+		if zoomedIn then  
+			TweenService:Create(ImageLabelBtn, tweenInfoBtn, {Size = originalSize}):Play()  
+		else  
+			TweenService:Create(ImageLabelBtn, tweenInfoBtn, {Size = zoomedSize}):Play()  
+		end  
+		zoomedIn = not zoomedIn  
+
+		if faded then  
+			fadeOutTween:Play()  
+		else  
+			fadeInTween:Play()  
+		end  
+		faded = not faded  
+
+		-- LỆNH ĐÓNG / MỞ KHUNG CHÍNH (Kết nối trực tiếp vào UI gốc)
+		if DropShadowHolder.Visible then
+			DropShadowHolder.Visible = false
+		else
+			DropShadowHolder.Visible = true
+		end
+	end)
+	-- ==============================================================================
 	--// Blur
 	local MoreBlur = Instance.new("Frame");
 	local DropShadowHolder1 = Instance.new("Frame");
