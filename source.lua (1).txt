@@ -723,7 +723,7 @@ function FlurioreLib:MakeGui(GuiConfig)
 		end
 	end
 	local OldPos = UDim2.new(0.5, 0, 0.5, 0)
-	local OldSize = DropShadowHolder.Size
+	local OldSize = UDim2.new(0, 550, 0, 400)
 	MaxRestore.MouseButton1Down:Connect(function()
 		CircleClick(MaxRestore, Mouse.X, Mouse.Y)
 		if ImageLabel.Image == "rbxassetid://9886659406" then
